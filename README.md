@@ -7,15 +7,14 @@ Outil de généalogie : ajoute une clé "_BRCH" à un GEDCOM pour indiquer la br
 
 <br><br><b>Principe : </b>
 <br>1/ balaye le fichier GEDCOM pour identifier les 4 grands parents et recuperer l'initiale de leurs noms
-<br>2/ ajoute à chaque INDI trouvé dans le GEDCOM et ayant un label SOSA un label _BRCH sous la forme de 4 
-&emsp;   lettres. Si l'INDI découle de la lignée du grand père maternel apr exemple, _BRCH contiendra "--X-" avec 
-&emsp;   "X" etant l'initiale du grand père maternel. 
-&emsp;   Le format de _BRCH est le suivant :
+<br>2/ ajoute à chaque INDI trouvé dans le GEDCOM et ayant un label SOSA un label _BRCH sous la forme de 4 lettres. Si l'INDI découle de la lignée du grand père maternel apr exemple, _BRCH contiendra "--X-" avec "X" etant l'initiale du grand père maternel. 
+Le format de _BRCH est le suivant :
 <br>&emsp;&emsp;      "ABCD" :  A : initiale du nom du grand père paternel
-<br>&emsp;&emsp;                B : initiale du nom de la grand mère paternel
-<br>&emsp;&emsp;                C : initiale du nom du grand père maternel
-<br>&emsp;&emsp;                D : initiale du nom de la grand mère maternel
-&emsp;    Un INDI peut avoir plusieurs SOSA donc la chaine peut avoir plusieurs lettres renseignées, par ex "-X-Y"
+<br>&emsp;&emsp;&emsp;                B : initiale du nom de la grand mère paternel
+<br>&emsp;&emsp;&emsp;                C : initiale du nom du grand père maternel
+<br>&emsp;&emsp;&emsp;                D : initiale du nom de la grand mère maternel
+&emsp;
+<br>Un INDI peut avoir plusieurs SOSA donc la chaine peut avoir plusieurs lettres renseignées, par ex "-X-Y"
 <br>3/ le fichier généré après analyse est un "branche.ged". A vérifier avant de le renommer avec votre nom.
 
 <br><br><b>Nota:</b>
