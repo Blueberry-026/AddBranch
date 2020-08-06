@@ -1,11 +1,11 @@
 # AddBranch
 Outil de généalogie : ajoute une clé "_BRCH" à un GEDCOM pour indiquer la branche à laquelle un individu est rattaché
 
-<br><br><b>Préambule :</b>
+<br><b>Préambule :</b>
 <br>1/ Le fichier traité doit etre conforme à la norme GEDCOM 5.5.x
 <br>2/ Il doit doit contenir une numérotation SOSA (labels "_SOSA" ou "_SOSADABOVILLE")
 
-<br><br><b>Principe : </b>
+<br><b>Principe : </b>
 <br>1/ balaye le fichier GEDCOM pour identifier les 4 grands parents et recuperer l'initiale de leurs noms
 <br>2/ ajoute à chaque INDI trouvé dans le GEDCOM et ayant un label SOSA un label _BRCH sous la forme de 4 lettres. Si l'INDI découle de la lignée du grand père maternel apr exemple, _BRCH contiendra "--X-" avec "X" etant l'initiale du grand père maternel. 
 Le format de _BRCH est le suivant :
@@ -17,7 +17,7 @@ Le format de _BRCH est le suivant :
 <br>Un INDI peut avoir plusieurs SOSA donc la chaine peut avoir plusieurs lettres renseignées, par ex "-X-Y"
 <br>3/ le fichier généré après analyse est un "branche.ged". A vérifier avant de le renommer avec votre nom.
 
-<br><br><b>Nota:</b>
+<br><b>Nota:</b>
 <br>1/ un INDI peut avoir plusieurs etiquettes "_SOSA" ou "_SOSADABOVILLE" selon le logiciel de généalogie utilisé
 <br>2/ outil "quick and dirty", réalisé juste pour mon usage et publié pour information qui marche bien pour moi mais 
 <br>    à utiliser avec précaution
