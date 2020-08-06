@@ -1,9 +1,12 @@
 import sys
 import os
 import glob
-from typing import List
+import os.path
 
-gedRep = "e:\Genealogie\Datas"
+from typing import List
+from os import path
+
+gedRep = "/home/blueb/Genealogie/Datas"
 gedFile = "EricGhis.ged"
 outFile = "branches.ged"
 
@@ -86,9 +89,22 @@ def lib_SosaToGp(sosa):
 # Programme principal
 # ======================================================================'
 try:
-    f_IN = open(gedRep + "\\" + gedFile, 'r', encoding='utf8', errors="ignore")
-    f_OUT = open(gedRep + "\\" + outFile, 'w', encoding='utf8', errors="ignore")
-    ged = f_IN.readlines()
+    pathIN =gedRep + "/" + gedFile
+    pathOUT =gedRep + "/" + outFile
+
+    if (os.path.isdir(gedRep)):
+        f_OUT = open(pathOUT, 'w', encoding='utf8', errors="ignore")
+    else:
+        print ("Répertoire ["+gedRep+"] non accessible")
+        quit()
+
+    if (path.exists(pathIN)):
+        f_IN =  open(pathIN,  'r', encoding='utf8', errors="ignore")
+        ged = f_IN.readlines()
+    else :
+        print("Fichier d'entrée non accessible [" + pathIN + "]")
+        quit()
+
     sosaTab: List[int] = 20 * [0]
     sosaPtr = 0
 
@@ -155,3 +171,4 @@ try:
 except IOError:
     type, value, traceback = sys.exc_info()
     print >> sys.stderr, "Error saving file:", value
+
